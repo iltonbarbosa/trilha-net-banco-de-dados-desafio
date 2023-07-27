@@ -1,0 +1,39 @@
+--1
+select Nome, Ano from Filmes
+
+--2
+select Nome, Ano, Duracao from Filmes order by Ano
+
+--3
+select Nome, Ano, Duracao from Filmes where Nome='De Volta para o Futuro' order by Ano
+
+--4
+select Nome, Ano, Duracao from Filmes where Ano = 1997
+
+--5
+select Nome, Ano, Duracao from Filmes where Ano > 2000
+
+--6
+select Nome, Ano, Duracao from Filmes where Duracao > 100 and Duracao < 150 order by Duracao
+
+--7
+select Ano, count(id) Quantidade from Filmes GROUP by Ano order by Quantidade desc
+
+--8
+select id, primeironome, ultimonome, Genero from Atores where Genero = 'M'
+
+--9
+select id, primeironome, ultimonome, Genero from Atores where Genero = 'F' order by primeironome
+
+--10
+SELECT f.Nome, g.Genero from Filmes f inner join FilmesGenero fg on(f.Id = fg.idfilme) inner join Generos g on(g.id = fg.IdGenero)
+
+--11
+SELECT f.Nome, g.Genero from Filmes f inner join FilmesGenero fg on(f.Id = fg.idfilme) inner join Generos g on(g.id = fg.IdGenero) where g.Genero = 'Mistério'
+
+--12
+select f.Nome, a.PrimeiroNome, a.UltimoNome, e.Papel from Filmes f inner join ElencoFilme e on(f.Id = e.IdFilme) inner join Atores a on(a.Id = e.IdAtor)
+
+-------------
+Há um erro no enunciado 7.
+Utilizei o https://sqliteonline.com/ para não ser necessário instalar.
